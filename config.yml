@@ -1,0 +1,30 @@
+servers:
+  c:
+    - ccls
+    - '--init="{"clang": {"resourceDir": "/usr/lib/llvm-10/lib/clang/10.0.0/include"}}"'
+  c++:
+    - ccls
+    - '--init="{"clang": {"resourceDir": "/usr/lib/llvm-10/lib/clang/10.0.0/include"}}"'
+  css:
+    - 'css-languageserver'
+    - 'start'
+  dockerfile:
+    - 'docker-langserver'
+    - 'start'
+  go:
+    - gopls
+  html:
+    - 'html-languageserver'
+    - 'start'
+  java:
+    - 'TBD'
+  javascript:
+    - node
+    - '/home/craftslab/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'
+  python:
+    - 'TBD'
+  rust:
+    - rls
+  shell:
+    - 'bash-language-server'
+    - 'start'

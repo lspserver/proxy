@@ -1,0 +1,52 @@
+---
+name: "CI"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install packages
+        run: |
+          npm install -g yarn
+          yarn
+        continue-on-error: false
+      - name: Run lint
+        run: yarn run lint
+        continue-on-error: false
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install package
+        run: |
+          npm install -g yarn
+          yarn
+        continue-on-error: false
+      - name: Run coverage
+        run: yarn run coverage
+        continue-on-error: false
+      - name: Upload coverage
+        run: bash <(curl -s https://codecov.io/bash)
