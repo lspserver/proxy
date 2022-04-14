@@ -9,8 +9,8 @@ module.exports = {
     main: "./proxy.ts",
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: "[name]-bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: "proxy.js",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
