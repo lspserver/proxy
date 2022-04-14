@@ -20,5 +20,4 @@ module.exports = {
       { test: /\.tsx?$/, loader: "ts-loader" },
     ],
   },
-  externals: [/node_modules/, 'bufferutil', 'utf-8-validate'],
 };

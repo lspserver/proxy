@@ -10,7 +10,6 @@
   "scripts": {
     "build": "webpack",
     "clean": "rimraf dist",
-    "dev": "tsc --watch",
     "coverage": "mkdir coverage && nyc report --reporter=json -t coverage --report-dir=coverage",
     "dev": "tsc -w",
     "lint": "eslint --ext .ts ./",
@@ -19,9 +18,11 @@
   },
   "dependencies": {
     "@sourcegraph/vscode-ws-jsonrpc": "^0.0.3-fork",
+    "bufferutil": "^4.0.6",
     "copy-webpack-plugin": "^5.1.1",
     "js-yaml": "^3.13.1",
     "minimist": "^1.2.0",
+    "utf-8-validate": "^5.0.9",
     "ws": "^8.5.0"
   },
   "devDependencies": {
