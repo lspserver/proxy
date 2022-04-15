@@ -9,5 +9,5 @@ RUN pushd proxy && \
     popd
 
 USER craftslab
-WORKDIR /home/craftslab/proxy
-ENTRYPOINT [ "node", "dist/proxy.js" ]
+WORKDIR /home/craftslab
+ENTRYPOINT [ "node", "proxy/dist/proxy.js" ]

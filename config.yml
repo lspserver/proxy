@@ -1,10 +1,12 @@
 servers:
   c:
     - ccls
-    - --init="{\"clang\": {\"resourceDir\": \"/usr/lib/llvm-10/lib/clang/10.0.0/include\"}}"
+    - --init
+    - "{\"clang\": {\"resourceDir\": \"/usr/lib/llvm-10/lib/clang/10.0.0/include\"}}"
   c++:
     - ccls
-    - --init="{\"clang\": {\"resourceDir\": \"/usr/lib/llvm-10/lib/clang/10.0.0/include\"}}"
+    - --init
+    - "{\"clang\": {\"resourceDir\": \"/usr/lib/llvm-10/lib/clang/10.0.0/include\"}}"
   css:
     - css-languageserver
     - --stdio
@@ -18,15 +20,14 @@ servers:
     - --stdio
   java:
     - python3.9
-    - jdtls
+    - jdt-language-server/bin/jdtls
     - --configuration ~/.cache/jdtls
   javascript:
-    - node
-    - /home/craftslab/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js
+    - javascript-typescript-stdio
   python:
     - pylsp
   rust:
-    - rls
+    - .cargo/bin/rls
   shell:
     - bash-language-server
     - start

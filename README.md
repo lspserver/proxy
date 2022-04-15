@@ -35,7 +35,7 @@ yarn && yarn run start
 ```bash
 git clone https://github.com/lspserver/proxy.git
 cd proxy
-docker build --no-cache -f Dockerfile -t ghcr.io/lspserver/proxy:latest .
+docker build -f Dockerfile -t ghcr.io/lspserver/proxy:latest .
 docker run --rm -p 49093:49093 -v $PWD:/tmp ghcr.io/lspserver/proxy:latest --port 49093 --servers /tmp/config.yml
 ```
 
